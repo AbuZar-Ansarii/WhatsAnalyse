@@ -54,8 +54,6 @@
 #         cleaned_list.append(cleaned_sentence)
 
 #     return cleaned_list
-import re
-from urlextract import URLExtract
 from wordcloud import WordCloud
 import pandas as pd
 from collections import Counter
@@ -85,11 +83,12 @@ def create_wordcloud(selected_user, df):
     df_wc = wc.generate(df['Chat'].str.cat(sep=" "))
     return df_wc
 
+
 def clean_text(words):
     temp = []
     for w in words:
         w = w.lower()
-        if w not in emoji.UNICODE_EMOJI_ALIAS:
+        if not emoji.is_emoji(w):  # Use emoji.is_emoji()
             temp.append(w)
 
     return temp
@@ -107,27 +106,3 @@ def monthly_timeline(df):
 def daily_timeline(df):
     daily_timeline = df.groupby('Date').size().reset_index(name='Message Count') # Use size() and rename
     return daily_timeline
-
-def week_activity_map(df):
-    period = []
-    for i in df[['Day_name', 'Hour']]['Hour']:
-        if i == 23:
-            period.append('23-0')
-        elif i == 0:
-            period.append('0-1')
-        else:
-            period.append(f'{i}-{i+1}')
-    df['Period'] = period
-    active_heatmap = pd.pivot_table(df, index="Day_name", columns="Period", values="Chat", aggfunc='count').fillna(0) #changed value to chat
-    return active_heatmap
-
-def most_active_day(df):
-    busy_day = df['Day_name'].value_counts().head(1)
-    return busy_day
-
-def most_active_month(df):
-    busy_month = df['Month'].value_counts().head(1)
-    return busy_month
-
-def clear_df(name):
-    return name.split(',')[0]
