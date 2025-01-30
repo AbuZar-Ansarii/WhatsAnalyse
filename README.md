@@ -2,6 +2,17 @@
 
 This Streamlit application analyzes WhatsApp chat logs, providing insights into communication patterns, busiest times, and popular words used in the conversations. It supports analysis for overall chat activity and individual user contributions.
 
+
+## Screenshots 
+
+(Add screenshots of your app in action here)
+![Screenshot 2025-01-30 112127](https://github.com/user-attachments/assets/97006436-e923-4895-890f-bf8a39938911)
+![Screenshot 2025-01-30 112433](https://github.com/user-attachments/assets/ed3e70bf-6db2-4f35-aff0-c4d80cbed672)
+![Screenshot 2025-01-30 112340](https://github.com/user-attachments/assets/40bc85e8-cf30-4e63-9129-30bcd5da27b3)
+![Screenshot 2025-01-30 112321](https://github.com/user-attachments/assets/4c5fa6d6-135c-476b-92be-6d36b02a64c8)
+![Screenshot 2025-01-30 112241](https://github.com/user-attachments/assets/67685b67-7e65-460d-ad9a-02625b174368)
+
+
 ## Table of Contents
 
 - [Features](#features)
@@ -100,11 +111,3 @@ To deploy your own version of this app, follow these steps:
     streamlit run app.py
     ```
 
-## Screenshots (Optional)
-
-(Add screenshots of your app in action here)
-![Screenshot 2025-01-30 112127](https://github.com/user-attachments/assets/97006436-e923-4895-890f-bf8a39938911)
-![Screenshot 2025-01-30 112433](https://github.com/user-attachments/assets/ed3e70bf-6db2-4f35-aff0-c4d80cbed672)
-![Screenshot 2025-01-30 112340](https://github.com/user-attachments/assets/40bc85e8-cf30-4e63-9129-30bcd5da27b3)
-![Screenshot 2025-01-30 112321](https://github.com/user-attachments/assets/4c5fa6d6-135c-476b-92be-6d36b02a64c8)
-![Screenshot 2025-01-30 112241](https://github.com/user-attachments/assets/67685b67-7e65-460d-ad9a-02625b174368)
