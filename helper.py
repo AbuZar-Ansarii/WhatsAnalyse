@@ -95,19 +95,17 @@ def clean_text(words):
     return temp
 
 def monthly_timeline(df):
-    timeline = df.groupby(['Year', 'Month']).count().reset_index()
+    timeline = df.groupby(['Year', 'Month']).size().reset_index(name='Message Count') # Use size() and rename
     time = []
     for i in range(timeline.shape[0]):
         time.append(f"{timeline['Month'][i]}-{timeline['Year'][i]}")
 
     timeline['time'] = time
-    timeline = timeline[['time', 'Message']]
-    timeline.rename({'Message': 'Message Count'}, axis=1, inplace=True)
+    timeline = timeline[['time', 'Message Count']] # Select correct columns
     return timeline
 
 def daily_timeline(df):
-    daily_timeline = df.groupby('Date').count().reset_index()
-    daily_timeline.rename({'Message': 'Message Count'}, axis=1, inplace=True)
+    daily_timeline = df.groupby('Date').size().reset_index(name='Message Count') # Use size() and rename
     return daily_timeline
 
 def week_activity_map(df):
@@ -120,7 +118,7 @@ def week_activity_map(df):
         else:
             period.append(f'{i}-{i+1}')
     df['Period'] = period
-    active_heatmap = pd.pivot_table(df, index="Day_name", columns="Period", values="Message", aggfunc='count').fillna(0)
+    active_heatmap = pd.pivot_table(df, index="Day_name", columns="Period", values="Chat", aggfunc='count').fillna(0) #changed value to chat
     return active_heatmap
 
 def most_active_day(df):
