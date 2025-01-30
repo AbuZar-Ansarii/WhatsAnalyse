@@ -5,7 +5,7 @@ import processor, helper
 import matplotlib.pyplot as plt
 
 # Set Streamlit page layout
-st.set_page_config(page_title="Chat Analyzer", layout="wide")
+st.set_page_config(page_title=" WhatsApp Chat Analyzer", layout="wide")
 
 st.sidebar.title("Chat Analyzer")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
