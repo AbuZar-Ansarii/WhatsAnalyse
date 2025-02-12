@@ -81,13 +81,13 @@ To deploy your own version of this app, follow these steps:
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/](https://github.com/)[Your GitHub Username]/[Your Repository Name].git
+    git clone https://github.com/AbuZar-Ansarii/WhatsAnalyse.git
     ```
 
 2.  **Navigate to the directory:**
 
     ```bash
-    cd [Your Repository Name]
+    cd WhatsAnalyse
     ```
 
 3.  **Create a virtual environment (recommended):**
